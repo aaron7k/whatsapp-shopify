@@ -1,0 +1,192 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root, [data-theme="green"] {
+    --background: 0 0% 100%;
+    --foreground: 142 63% 20%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 142 63% 20%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 142 63% 20%;
+
+    --primary: 142 63% 39%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 142 33% 96%;
+    --secondary-foreground: 142 63% 30%;
+
+    --muted: 142 33% 96%;
+    --muted-foreground: 142 5% 45%;
+
+    --accent: 142 33% 96%;
+    --accent-foreground: 142 63% 30%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 142 5% 90%;
+    --input: 142 5% 90%;
+    --ring: 142 63% 39%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 142 63% 39%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 0 0% 100%;
+    --sidebar-primary-foreground: 142 63% 39%;
+    --sidebar-accent: 142 53% 45%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 142 43% 35%;
+    --sidebar-ring: 0 0% 100%;
+  }
+
+  [data-theme="blue"] {
+    --background: 0 0% 100%;
+    --foreground: 210 79% 25%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 210 79% 25%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 79% 25%;
+
+    --primary: 210 79% 46%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 210 33% 96%;
+    --secondary-foreground: 210 79% 30%;
+
+    --muted: 210 33% 96%;
+    --muted-foreground: 210 5% 45%;
+
+    --accent: 210 33% 96%;
+    --accent-foreground: 210 79% 30%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 210 5% 90%;
+    --input: 210 5% 90%;
+    --ring: 210 79% 46%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 210 79% 46%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 0 0% 100%;
+    --sidebar-primary-foreground: 210 79% 46%;
+    --sidebar-accent: 210 69% 52%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 210 59% 42%;
+    --sidebar-ring: 0 0% 100%;
+  }
+
+  [data-theme="purple"] {
+    --background: 0 0% 100%;
+    --foreground: 260 50% 30%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 260 50% 30%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 260 50% 30%;
+
+    --primary: 260 50% 55%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 260 33% 96%;
+    --secondary-foreground: 260 50% 35%;
+
+    --muted: 260 33% 96%;
+    --muted-foreground: 260 5% 45%;
+
+    --accent: 260 33% 96%;
+    --accent-foreground: 260 50% 35%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 260 5% 90%;
+    --input: 260 5% 90%;
+    --ring: 260 50% 55%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 260 50% 55%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 0 0% 100%;
+    --sidebar-primary-foreground: 260 50% 55%;
+    --sidebar-accent: 260 40% 60%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 260 30% 50%;
+    --sidebar-ring: 0 0% 100%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f0f0f0;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--thumb-color, #128C7E);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--thumb-hover-color, #075E54);
+}
+
+[data-theme="green"] {
+  --thumb-color: #128C7E;
+  --thumb-hover-color: #075E54;
+}
+
+[data-theme="blue"] {
+  --thumb-color: #3182CE;
+  --thumb-hover-color: #2B6CB0;
+}
+
+[data-theme="purple"] {
+  --thumb-color: #805AD5;
+  --thumb-hover-color: #6B46C1;
+}
+
+.dashboard-section {
+  @apply p-6 transition-all duration-300;
+}
+
+.dashboard-card {
+  @apply bg-white rounded-lg shadow-md p-6 transition-all hover:shadow-lg;
+}
+
+.stats-card {
+  @apply bg-gradient-to-br from-primary to-primary/80 text-white rounded-lg shadow-md p-6;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
